@@ -1,6 +1,6 @@
 angular.module('app.services', [])
     .factory('Contact', function($http){
-        var base_url = "http://novelis.dev/api/contact/"
+        var base_url = "./api/contact/"
         return {
             list : function(){
                 return $http.get(base_url + 'list')
@@ -28,7 +28,7 @@ angular.module('app.services', [])
         }
     })
     .factory('Group', function($http){
-        var base_url = "http://novelis.dev/api/contact/group/"
+        var base_url = "./api/contact/group/"
         return {
             list : function(){
                 return $http.get(base_url + 'list')
@@ -58,7 +58,7 @@ angular.module('app.services', [])
     })
 
     .factory('PhoneType', function($http){
-        var base_url = "http://novelis.dev/api/phone-types/"
+        var base_url = "./api/phone-types"
 
         return {
             all: function(){

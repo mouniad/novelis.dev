@@ -19,12 +19,13 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
+            <a class="navbar-brand logo" href="#"><img id="logo" src="{{asset('assets/logo.png')}}"></a>
             <a class="navbar-brand" href="#">Contacts Manager</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li><a href="/#!/contacts">Contacts</a></li>
-                <li><a href="/#!/groups">Groups</a></li>
+                <li><a href="./#!/contacts">Contacts</a></li>
+                <li><a href="./#!/groups">Groups</a></li>
             </ul>
         </div><!--/.nav-collapse -->
     </div>
