@@ -4,47 +4,41 @@
   display: inline-block;
   border: 1px solid grey;
 }
-
-.padding{
+.padding {
   padding: 10px 5px;
 }
-
-#btn-add{
+#btn-add {
   margin-top: 30px;
 }
-
-
-.name{
+.name {
   text-decoration: none;
   font-size: 17px;
   color: #0f0f0f;
   margin-left: 5px;
 }
-.name:hover{
+.name:hover {
   text-decoration: none;
   color: #0f0f0f;
 }
 .gray-section {
   background: #f4f4f4;
 }
-.img-icon{
+.img-icon {
   height: 150px;
   width: 150px;
   margin: 30px 500px;
 }
-.no-padding{
+.no-padding {
   padding-left: 0px;
 }
-.add{
+.add {
   margin-top: 2px;
 }
-
-.contact{
+.contact {
   font-size: 20px;
   margin-left: 30px;
 }
-
-.titre{
+.titre {
   text-align: center;
   margin-top: 0px;
   padding-top: 50px;

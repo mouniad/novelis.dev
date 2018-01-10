@@ -1,0 +1,112 @@
+<div class="container">
+    <div class="col-sm-12 gray-section">
+        <img src="assets/user.png" alt="" class="img-responsive img-circle img-icon">
+        <div class="col-sm-12 text-center contact">
+            {{item.firstname}} {{item.lastname}}
+            <a class="btn btn-default" ><i class="fa fa-pencil"></i></a>
+        </div>
+    </div>
+    <div class="col-sm-12">
+        <h3>Phones</h3>
+        <div>
+             <ul class="list-group">
+                 <li ng-repeat="phone in item.phones" class="list-group-item"> <i class="fa fa-phone"></i> {{phone.number}}</li>
+             </ul>
+        </div>
+        <h3>Group</h3>
+        <p><b>{{item.group.name}}</b></p>
+        <h3>Emails</h3>
+        <div>
+            <ul class="list-group">
+                <li ng-repeat="email in item.emails" class="list-group-item"> <i class="fa fa-envelope"></i> {{email.address}}</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <h4 class="modal-title" id="myModalLabel">{{form_title}}</h4>
+            </div>
+            <div class="modal-body">
+                <form name="frmcontacts" class="form-horizontal" novalidate="">
+
+                    <div class="form-group">
+                        <label  class="col-sm-3 control-label" for="firstname">
+                            Firstname
+                        </label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control has-error" id="firstname" placeholder="Firstname" value="{{firstname}}"
+                                   ng-model="form.firstname" ng-required="true">
+                            <span class="help-inline"
+                                  ng-show="frmcontacts.firstname.$invalid && frmcontacts.firstname.$touched">Firstname field is required</span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label  class="col-sm-3 control-label" for="lastname">
+                            Lastname
+                        </label>
+                        <div class="col-sm-9">
+                            <input type="text"  class="form-control" id="lastname" placeholder="Lastname" value="{{lastname}}"
+                                   ng-model="form.lastname" ng-required="true">
+                            <span class="help-inline"
+                                  ng-show="frmcontacts.lastname.$invalid && frmcontacts.lastname.$touched">Lastname field is required</span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label  class="col-sm-3 control-label" for="phone">
+                            Phone
+                        </label>
+                        <div class="col-sm-5">
+                            <input type="text" ng-model="form.phones[]" class="form-control" id="phone" placeholder="Phone number" value="{{phone}}">
+                            <input type="text" ng-model="form.phones[]" class="form-control" id="show_phone" placeholder="Phone number" value="{{phone}}" style="display: none;">
+                        </div>
+                        <div class="col-sm-3 no-padding">
+                            <select class="form-control">
+                                <option value="Mobile" selected="selected">Mobile</option>
+                                <option value="Home">Home</option>
+                                <option value="Work">Work</option>
+                            </select>
+                        </div>
+                        <a class="btn btn-default add" ng-click="addInput('show_phone')" ><i class="fa fa-plus"></i></a>
+
+                    </div>
+
+                    <div class="form-group">
+                        <label  class="col-sm-3 control-label" for="email">
+                            Email
+                        </label>
+                        <div  ng-repeat="email in form.emails" class="col-sm-6">
+                            <input type="email" ng-model="form.emails[]" class="form-control" id="email" placeholder="Email" value="{{email}}" style="display: none;">
+                        </div>
+                        <div class="col-sm-1 pull-right add"style="padding-left: 0px">
+                            <a class="btn btn-default" ng-click="addInput('email')"><i class="fa fa-plus"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label  class="col-sm-3 control-label" for="group">
+                            Group
+                        </label>
+                        <div class="col-sm-9">
+                            <select class="form-control"  ng-model="form.group_contact_id" name="group" id="group">
+                                <option value="">Select a group</option>
+                                <option ng-repeat="group in groups" ng-value="group.id">{{group.name}}</option>
+                            </select>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal" aria-label="Close"><span aria-hidden="true" class="glyphicon glyphicon-remove"></span><span>  Cancel</span></button>
+                <button type="button" class="btn btn-primary" id="btn-save" ng-click="save(modalstate, id)" ng-disabled="frmcontacts.$invalid"><span aria-hidden="true" class="glyphicon glyphicon-ok"></span><span> Save </span></button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,5 @@
+# Created by .ignore support plugin (hsz.mobi)
+*
+!phpcs.xml
+!phpmd.xml
+!.gitignore
