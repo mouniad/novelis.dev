@@ -1,0 +1,13 @@
+<img src="assets/logo.png" id="logo" >
+<h1 class="tp">Novelis : moteur de recherche</h1>
+
+
+<div class="container">
+    <div ng-controller="MainController">
+        <input class="form-control ng-valid ng-dirty" placeholder="Seach a name" type="text" ng-model="searchText"><br>
+        <hr>
+        <div class="padding" ng-repeat="name in names | filter: searchText">
+            <h2> {{name}}</h2>
+        </div>
+    </div>
+</div>
